@@ -1,0 +1,640 @@
+[GRAB_POSLMT_VNEG]
+id = 16
+name = 垂直负向极限位置
+min = -32500
+max = 0
+short = Z负极限
+position = 0
+
+[GRAB_POSLMT_VPOS]
+id = 17
+name = 垂直正向极限位置
+min = 0
+max = 32000
+short = Z正极限
+position = 0
+
+[GRAB_POS_VRST]
+id = 18
+name = 垂直初始位置
+min = -3200
+max = 3200
+short = Z初始位置
+position = 0
+
+[GRAB_MIX_HIGHT]
+id = 19
+name = 混匀高度垂直位置
+min = -32000
+max = 32000
+short = 混匀高度
+position = 0
+
+[GRAB_DELTA_HIGHT]
+id = 20
+name = 放杯位置相对抓杯位置高度差
+min = 0
+max = 0
+short = 抓放高度差
+position = 0
+
+[GRAB_MESURE_CATCH_POS]
+id = 21
+name = 光学测量位抓杯垂直位置
+min = -32000
+max = 32000
+short = 光学测量抓杯Z
+position = 1
+
+[GRAB_MESURE_VERTICAL_LIMIT]
+id = 22
+name = 光学测量位垂直极限位置
+min = -32000
+max = 32000
+short = 测量垂直极限
+position = 0
+
+[GRAB_BORN_CATCH_POS]
+id = 23
+name = 光学孵育位抓杯垂直位置
+min = -32000
+max = 32000
+short = 光学孵育抓杯Z
+position = 1
+
+[GRAB_BORN_VERTICAL_LIMIT]
+id = 24
+name = 光学孵育位垂直极限位置
+min = -32000
+max = 32000
+short = 孵育垂直极限
+position = 0
+
+[GRAB_MAGNETIC_CATCH_POS]
+id = 25
+name = 磁珠杯手动区抓杯垂直位置
+min = -32000
+max = 32000
+short = 磁珠抓杯Z
+position = 1
+
+[GRAB_MAGNETIC_VERTICAL_LIMIT]
+id = 26
+name = 磁珠杯手动区垂直极限位置
+min = -32000
+max = 32000
+short = 磁珠杯垂直极限
+position = 0
+
+[GRAB_MAGMEA_CATCH_POS]
+id = 27
+name = 磁珠法测量位抓杯垂直位置
+min = -32000
+max = 32000
+short = 磁珠法抓杯Z
+position = 1
+
+[GRAB_MAGMEA_VERTICAL_LIMIT]
+id = 28
+name = 磁珠法测量位垂直极限位置
+min = -32000
+max = 32000
+short = 磁珠法垂直极限
+position = 0
+
+[GRAB_DISK_CATCH_POS]
+id = 29
+name = 调度盘4#抓杯垂直位置
+min = -32000
+max = 32000
+short = 调度盘4#抓杯Z
+position = 1
+
+[GRAB_DISK_VERTICAL_LIMIT]
+id = 30
+name = 调度盘4#垂直极限位置
+min = -32000
+max = 32000
+short = 调度盘垂直极限
+position = 0
+
+[GRAB_COOPERATE_SAMPLE_VERTICAL]
+id = 31
+name = 配合样本针垂直位置
+min = -32000
+max = 32000
+short = 配合样本Z
+position = 1
+
+[GRAB_COOPERATE_SAMPLE_LIMIT]
+id = 32
+name = 配合样本针垂直极限位置
+min = -32000
+max = 32000
+short = 配合样本Z极限
+position = 0
+
+[GRAB_COOPERATE_REAGENT_VERTICAL]
+id = 33
+name = 配合试剂针垂直位置
+min = -32000
+max = 32000
+short = 配合试剂Z
+position = 1
+
+[GRAB_COOPERATE_REAGENT_LIMIT]
+id = 34
+name = 配合试剂针垂直极限位置
+min = -32000
+max = 32000
+short = 配合试剂Z极限
+position = 0
+
+[GRAB_THROW_VERTICAL]
+id = 35
+name = 抛杯位置垂直位置
+min = -32000
+max = 32000
+short = 抛杯Z
+position = 1
+
+[GRAB_THROW_LIMIT]
+id = 36
+name = 抛杯位置垂直极限位置
+min = -32000
+max = 32000
+short = 抛杯垂直极限
+position = 0
+
+[GRAB_X_NEG_LIMIT]
+id = 37
+name = X轴负向极限位置
+min = -32000
+max = 0
+short = X负极限
+position = 0
+
+[GRAB_X_POS_LIMIT]
+id = 38
+name = X轴正向极限位置
+min = 0
+max = 36000
+short = X正极限
+position = 0
+
+[GRAB_X_INIT_POS]
+id = 39
+name = X轴初始位置
+min = -3200
+max = 3200
+short = X初始位置
+position = 0
+
+[GRAB_Y_NEG_LIMIT]
+id = 40
+name = Y轴负向极限位置
+min = -32000
+max = 0
+short = Y负极限
+position = 0
+
+[GRAB_Y_POS_LIMIT]
+id = 41
+name = Y轴正向极限位置
+min = 0
+max = 32000
+short = Y正极限
+position = 0
+
+[GRAB_Y_INIT_POS]
+id = 42
+name = Y轴初始位置
+min = -3200
+max = 3200
+short = Y初始位置
+position = 0
+
+[GRAB_CATCH_Y_DISTANCE]
+id = 43
+name = 抓杯准备位置Y轴相对距离
+min = -3200
+max = 3200
+short = 抓杯准备Y距离
+position = 0
+
+[GRAB_THROW_Y_DISTANCE]
+id = 44
+name = 抛杯完成位置Y轴相对距离
+min = -3200
+max = 3200
+short = 抛杯完成Y距离
+position = 0
+
+[GRAB_CORRECTE_POS1]
+id = 45
+name = 校正码齿1位置-X轴
+min = 0
+max = 0
+short = 校正X1
+position = 1
+
+[GRAB_CORRECTE_POS2]
+id = 46
+name = 校正码齿2位置-X轴
+min = 0
+max = 0
+short = 校正X2
+position = 1
+
+[GRAB_DISK_X_POS]
+id = 47
+name = 调度盘4#-X轴
+min = -32000
+max = 32000
+short = 调度盘4#X
+position = 1
+
+[GRAB_DISK_Y_POS]
+id = 48
+name = 调度盘4#-Y轴
+min = -32000
+max = 32000
+short = 调度盘4#Y
+position = 1
+
+[GRAB_COOPERATE_SAMPLE_XPOS]
+id = 49
+name = 配合样本针加样-X轴
+min = -32000
+max = 32000
+short = 配合样本X
+position = 1
+
+[GRAB_COOPERATE_SAMPLE_YPOS]
+id = 50
+name = 配合样本针加样-Y轴
+min = -32000
+max = 32000
+short = 配合样本Y
+position = 1
+
+[GRAB_COOPERATE_REAGENT_XPOS]
+id = 51
+name = 配合试剂针加样-X轴
+min = -32000
+max = 32000
+short = 配合试剂X
+position = 1
+
+[GRAB_COOPERATE_REAGENT_YPOS]
+id = 52
+name = 配合试剂针加样-Y轴
+min = -32000
+max = 32000
+short = 配合试剂Y
+position = 1
+
+[GRAB_THROW_X_POS1]
+id = 53
+name = 抛杯位1-X轴
+min = -32000
+max = 50000
+short = 抛杯X1
+position = 1
+
+[GRAB_THROW_Y_POS1]
+id = 54
+name = 抛杯位1-Y轴
+min = -32000
+max = 32000
+short = 抛杯Y1
+position = 1
+
+[GRAB_THROW_X_POS2]
+id = 55
+name = 抛杯位2-X轴
+min = -32000
+max = 50000
+short = 抛杯X2
+position = 1
+
+[GRAB_THROW_Y_POS2]
+id = 56
+name = 抛杯位2-Y轴
+min = -32000
+max = 32000
+short = 抛杯Y2
+position = 1
+
+[GRAB_MAGMEA_X_POS]
+id = 57
+name = 磁珠法测量位置51-X轴
+min = -32000
+max = 32000
+short = 磁珠51X
+position = 1
+
+[GRAB_MEGMEA_Y_POS]
+id = 58
+name = 磁珠法测量位置51-Y轴
+min = -32000
+max = 32000
+short = 磁珠51Y
+position = 1
+
+[GRAB_MESURE_X_POS1]
+id = 59
+name = 光学测量位置1-X轴
+min = -32000
+max = 32000
+short = 光学测量X1
+position = 1
+
+[GRAB_MESURE_Y_POS1]
+id = 60
+name = 光学测量位置1-Y轴
+min = -32000
+max = 32000
+short = 光学测量Y1
+position = 1
+
+[GRAB_MESURE_X_POS12]
+id = 61
+name = 光学测量位置12-X轴
+min = -32000
+max = 32000
+short = 光学测量X12
+position = 1
+
+[GRAB_MESURE_Y_POS12]
+id = 62
+name = 光学测量位置12-Y轴
+min = -32000
+max = 32000
+short = 光学测量Y12
+position = 1
+
+[GRAB_BORN_X_POS21]
+id = 63
+name = 光学孵育位21-X轴
+min = -32000
+max = 32000
+short = 光学孵育21X
+position = 1
+
+[GRAB_BORN_Y_POS21]
+id = 64
+name = 光学孵育位21-Y轴
+min = -32000
+max = 32000
+short = 光学孵育21Y
+position = 1
+
+[GRAB_BORN_X_POS26]
+id = 65
+name = 光学孵育位26-X轴
+min = -32000
+max = 32000
+short = 光学孵育26X
+position = 1
+
+[GRAB_BORN_Y_POS26]
+id = 66
+name = 光学孵育位26-Y轴
+min = -32000
+max = 32000
+short = 光学孵育26Y
+position = 1
+
+[GRAB_BORN_X_POS38]
+id = 67
+name = 光学孵育位38-X轴
+min = -32000
+max = 32000
+short = 光学孵育38X
+position = 1
+
+[GRAB_BORN_Y_POS38]
+id = 68
+name = 光学孵育位38-Y轴
+min = -32000
+max = 32000
+short = 光学孵育38Y
+position = 1
+
+[GRAB_MEGNETIC_X_POS61]
+id = 69
+name = 磁珠杯手动放杯61--X轴
+min = -32000
+max = 32000
+short = 磁珠61X
+position = 1
+
+[GRAB_MEGNETIC_Y_POS61]
+id = 70
+name = 磁珠杯手动放杯61--Y轴
+min = -32000
+max = 32000
+short = 磁珠61Y
+position = 1
+
+[GRAB_MEGNETIC_X_POS72]
+id = 71
+name = 磁珠杯手动放杯72--X轴
+min = -32000
+max = 32000
+short = 磁珠72X
+position = 1
+
+[GRAB_MEGNETIC_Y_POS72]
+id = 72
+name = 磁珠杯手动放杯72--Y轴
+min = -32000
+max = 32000
+short = 磁珠72Y
+position = 1
+
+[GRAB_MIX_STRENGTH1]
+id = 73
+name = 混匀强度1-光学法-弱
+min = 0
+max = 1000
+short = 混匀强度1
+position = 0
+
+[GRAB_MIX_STRENGTH2]
+id = 74
+name = 混匀强度2-光学法-中弱
+min = 0
+max = 1000
+short = 混匀强度2
+position = 0
+
+[GRAB_MIX_STRENGTH3]
+id = 75
+name = 混匀强度3-光学法-中
+min = 0
+max = 1000
+short = 混匀强度3
+position = 0
+
+[GRAB_MIX_STRENGTH4]
+id = 76
+name = 混匀强度4-光学法-中强
+min = 0
+max = 1000
+short = 混匀强度4
+position = 0
+
+[GRAB_MIX_STRENGTH5]
+id = 77
+name = 混匀强度5-光学法-强
+min = 0
+max = 1000
+short = 混匀强度5
+position = 0
+
+[GRAB_MIX_STRENGTH6]
+id = 78
+name = 混匀强度6-磁珠法-弱
+min = 0
+max = 1000
+short = 混匀强度6
+position = 0
+
+[GRAB_MIX_STRENGTH7]
+id = 79
+name = 混匀强度7-磁珠法-中弱
+min = 0
+max = 1000
+short = 混匀强度7
+position = 0
+
+[GRAB_MIX_STRENGTH8]
+id = 80
+name = 混匀强度8-磁珠法-中
+min = 0
+max = 1000
+short = 混匀强度8
+position = 0
+
+[GRAB_MIX_STRENGTH9]
+id = 81
+name = 混匀强度9-磁珠法-中强
+min = 0
+max = 1000
+short = 混匀强度9
+position = 0
+
+[GRAB_MIX_STRENGTH10]
+id = 82
+name = 混匀强度10-磁珠法-强
+min = 0
+max = 1000
+short = 混匀强度10
+position = 0
+
+[GRAB_OPTICS_MIX_SAMPLE_TIME]
+id = 83
+name = 光学混匀时间-样本混合液
+min = 0
+max = 0
+short = Mix time Sample1
+position = 0
+
+[GRAB_OPTICS_MIX_MIX_TIME]
+id = 84
+name = 光学混匀时间-中间试剂
+min = 0
+max = 0
+short = Mix time Mid1
+position = 0
+
+[GRAB_OPTICS_MIX_TRI_TIME]
+id = 85
+name = 光学混匀时间-触发试剂
+min = 0
+max = 0
+short = Mix time Tri1
+position = 0
+
+[GRAB_MEGNETIC_MIX_SAMPLE_TIME]
+id = 86
+name = 磁珠混匀时间-样本混合液
+min = 0
+max = 0
+short = Mix time Sample2
+position = 0
+
+[GRAB_MEGNETIC_MIX_MID_TIME]
+id = 87
+name = 磁珠混匀时间-中间试剂
+min = 0
+max = 0
+short = Mix time Mid2
+position = 0
+
+[GRAB_MEGNETIC_MIX_TRI_TIME]
+id = 88
+name = 磁珠混匀时间-触发试剂
+min = 0
+max = 0
+short = Mix time Tri2
+position = 0
+
+[GRAB_CATCH_CORRECTE]
+id = 89
+name = 是否开启抓手X轴校正
+min = 0
+max = 0
+short = 校正
+position = 0
+
+[GRAB_MIX_ACC_UP]
+id = 90
+name = 混匀速度加速台阶
+min = 0
+max = 100
+short = Mix acc step
+position = 0
+
+[GRAB_MIX_DEC_UP]
+id = 91
+name = 混匀速度减速台阶
+min = 0
+max = 100
+short = Mix down step
+position = 0
+
+[GRAB_MESURE_CATCH_POS12]
+id = 92
+name = 光学测量位抓杯垂直位置12
+min = -32000
+max = 32000
+short = 光学测量12Z
+position = 1
+
+[GRAB_BORN_CATCH_POS26]
+id = 93
+name = 光学孵育位抓杯垂直位置26
+min = -32000
+max = 32000
+short = 光学孵育26Z
+position = 1
+
+[GRAB_BORN_CATCH_POS38]
+id = 94
+name = 光学孵育位抓杯垂直位置38
+min = -32000
+max = 32000
+short = 光学孵育38Z
+position = 1
+
+[GRAB_MAGNETIC_CATCH_POS72]
+id = 95
+name = 磁珠杯手动区抓杯垂直位置72
+min = -32000
+max = 32000
+short = 磁珠抓杯72Z
+position = 1
+

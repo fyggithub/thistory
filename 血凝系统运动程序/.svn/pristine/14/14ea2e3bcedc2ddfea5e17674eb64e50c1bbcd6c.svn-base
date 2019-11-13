@@ -1,0 +1,568 @@
+[REAGENT_POSLMT_VNEG]
+id = 16
+name = 垂直负向极限位置
+min = -32500
+max = 32500
+short = Z负极限
+position = 0
+
+[REAGENT_POSLMT_VPOS]
+id = 17
+name = 垂直正向极限位置
+min = -32500
+max = 32500
+short = Z正极限
+position = 0
+
+[REAGENT_POS_VRST]
+id = 18
+name = 垂直初始位置
+min = -32000
+max = 32000
+short = Z初始
+position = 0
+
+[REAGENT_CLEAN_UP_POS]
+id = 19
+name = 清洗池上方垂直位置
+min = -32000
+max = 32000
+short = 清洗Z高度
+position = 1
+
+[REAGENT_CLEAN_CLN_POS]
+id = 20
+name = 清洗池清洗垂直位置
+min = -32000
+max = 32000
+short = 清洗垂直
+position = 0
+
+[REAGENT_CLEAN_LIMIT_POS]
+id = 21
+name = 清洗池垂直极限位置
+min = -32000
+max = 10000
+short = 清洗极限
+position = 0
+
+[REAGENT_BIG_HOLE_UP_POS]
+id = 22
+name = 冷藏试剂大孔区上方垂直位置
+min = -32000
+max = 32000
+short = 冷藏大孔Z高度
+position = 1
+
+[REAGENT_BIG_HOLE_VERTICAL_POS]
+id = 23
+name = 冷藏试剂大孔区垂直极限位置
+min = -32000
+max = 32000
+short = 大孔垂直极限
+position = 0
+
+[REAGENT_MID_HOLE_UP_POS]
+id = 24
+name = 冷藏试剂中孔区上方垂直位置
+min = -32000
+max = 32000
+short = 冷藏中孔Z高度
+position = 1
+
+[REAGENT_MID_HOLE_VERTICAL_POS]
+id = 25
+name = 冷藏试剂中孔区垂直极限位置
+min = -32000
+max = 32000
+short = 中孔垂直极限
+position = 0
+
+[REAGENT_SMALL_HOLE_UP_POS]
+id = 26
+name = 冷藏试剂小孔区上方垂直位置
+min = -32000
+max = 32000
+short = 冷藏小孔Z高度
+position = 1
+
+[REAGENT_SMALL_HOLE_VERTICAL_POS]
+id = 27
+name = 冷藏试剂小孔区垂直极限位置
+min = -32000
+max = 32000
+short = 小孔垂直极限
+position = 0
+
+[REAGENT_COOPERATE_UP_POS]
+id = 28
+name = 配合抓杯手上方垂直位置
+min = -32000
+max = 32000
+short = 配合抓手Z高度
+position = 1
+
+[REAGENT_COOPERATE_VERTICAL_POS]
+id = 29
+name = 配合抓杯手垂直位置
+min = -32000
+max = 32000
+short = 配合垂直
+position = 0
+
+[REAGENT_COOPERATE_VERTICAL_LIMIT]
+id = 30
+name = 配合抓杯手垂直极限位置
+min = -32000
+max = 32000
+short = 配合极限
+position = 0
+
+[REAGENT_X_NEG_LIMIT]
+id = 31
+name = X轴负向极限位置
+min = -32500
+max = 0
+short = X负极限
+position = 0
+
+[REAGENT_X_POS_LIMIT]
+id = 32
+name = X轴正向极限位置
+min = 0
+max = 32000
+short = X正极限
+position = 0
+
+[REAGENT_X_INIT_POS]
+id = 33
+name = X轴初始位置
+min = -32000
+max = 32000
+short = X初始
+position = 0
+
+[REAGENT_Y_NEG_LIMIT]
+id = 34
+name = Y轴负向极限位置
+min = -32500
+max = 0
+short = Y负极限
+position = 0
+
+[REAGENT_Y_POS_LIMIT]
+id = 35
+name = Y轴正向极限位置
+min = 0
+max = 32000
+short = Y正极限
+position = 0
+
+[REAGENT_Y_INIT_POS]
+id = 36
+name = Y轴初始位置
+min = -32000
+max = 32000
+short = Y初始
+position = 0
+
+[REAGENT_CLEAN_X_POS]
+id = 37
+name = 清洗池位置-X轴
+min = -32000
+max = 32000
+short = 清洗X
+position = 1
+
+[REAGENT_COOL_X_POS1]
+id = 38
+name = 冷藏试剂区域调试位置1-X轴
+min = -32000
+max = 32000
+short = 冷藏X1
+position = 1
+
+[REAGENT_COOL_X_POS2]
+id = 39
+name = 冷藏试剂区域调试位置2-X轴
+min = -32000
+max = 32000
+short = 冷藏X2
+position = 1
+
+[REAGENT_COOL_X_POS3]
+id = 40
+name = 冷藏试剂区域调试位置3-X轴
+min = -32000
+max = 32000
+short = 冷藏X3
+position = 1
+
+[REAGENT_COOPERATE_X_POS]
+id = 41
+name = 配合抓杯手-X轴
+min = -32000
+max = 32000
+short = 配合抓手X
+position = 1
+
+[REAGENT_CLEAN_Y_POS]
+id = 42
+name = 清洗池位置-Y轴
+min = -32000
+max = 32000
+short = 清洗Y
+position = 1
+
+[REAGENT_COOL_Y_POS1]
+id = 43
+name = 冷藏试剂区域调试位置1-Y轴
+min = -32000
+max = 32000
+short = 冷藏Y1
+position = 1
+
+[REAGENT_COOL_Y_POS2]
+id = 44
+name = 冷藏试剂区域调试位置2-Y轴
+min = -32000
+max = 32000
+short = 冷藏Y2
+position = 1
+
+[REAGENT_COOL_Y_POS3]
+id = 45
+name = 冷藏试剂区域调试位置3-Y轴
+min = -32000
+max = 32000
+short = 冷藏Y3
+position = 1
+
+[REAGENT_COOPERATE_Y_POS]
+id = 46
+name = 配合抓杯手-Y轴
+min = -32000
+max = 32000
+short = 配合抓手Y
+position = 1
+
+[REAGENT_INNER_TIME]
+id = 47
+name = 内壁清洗时间
+min = 0
+max = 100
+short = 内壁清洗时间
+position = 0
+
+[REAGENT_OUTTER_TIME]
+id = 48
+name = 外壁清洗时间
+min = 0
+max = 100
+short = 外壁清洗时间
+position = 0
+
+[REAGENT_SUB_TIME]
+id = 49
+name = 吸液时间
+min = 0
+max = 100
+short = 吸液时间
+position = 0
+
+[REAGENT_DRAIN_TIME]
+id = 50
+name = 排液时间
+min = 0
+max = 100
+short = 排液时间
+position = 0
+
+[REAGENT_DRAIN_DOWN_TIME]
+id = 51
+name = 排试剂下降时间
+min = 0
+max = 100
+short = 排试剂下降时间
+position = 0
+
+[REAGENT_SUB_DOWN_TIME]
+id = 52
+name = 吸试剂下降时间
+min = 0
+max = 100
+short = 吸试剂下降时间
+position = 0
+
+[REAGENT_SUB_FRONT_AIR]
+id = 53
+name = 吸液前吸空气量
+min = 0
+max = 100
+short = 吸液前吸空气量
+position = 0
+
+[REAGENT_ADD_SUB]
+id = 54
+name = 多吸液量
+min = 0
+max = 100
+short = 多吸液量
+position = 0
+
+[REAGENT_SUB_PUSH]
+id = 55
+name = 吸液后回推量
+min = 0
+max = 100
+short = 吸液后回推量
+position = 0
+
+[REAGENT_SUB_LATER_AIR]
+id = 56
+name = 吸液后吸空气量
+min = 0
+max = 3200
+short = 吸液后吸空气量
+position = 0
+
+[REAGENT_DRAIN_LATER_AIR]
+id = 57
+name = 排液后吸空气量
+min = 0
+max = 3200
+short = 排液后吸空气量
+position = 0
+
+[REAGENT_CLEAN_LATER_AIR]
+id = 58
+name = 清洗后吸空气量
+min = 0
+max = 3200
+short = 清洗后吸空气量
+position = 0
+
+[REAGENT_SYRINGE_NEGLMT]
+id = 59
+name = 注射器负向极限位置
+min = -32000
+max = 32000
+short = SYN负极限
+position = 0
+
+[REAGENT_SYRINGE_INIT_POS]
+id = 60
+name = 注射器初始位置
+min = -3200
+max = 3200
+short = SYN初始
+position = 0
+
+[REAGENT_SYRINGE_POSLMT]
+id = 61
+name = 注射器正向极限位置
+min = 0
+max = 32000
+short = SYN正极限
+position = 0
+
+[REAGENT_STEP_UL]
+id = 62
+name = 1微升对应微步数
+min = 0
+max = 516
+short = ul对应pluses
+position = 0
+
+[REAGENT_NEEDLE_DETECT1]
+id = 63
+name = 堵针检测阈值1
+min = 0
+max = 0
+short = 堵针检测值1
+position = 0
+
+[REAGENT_NEEDLE_DETECT2]
+id = 64
+name = 堵针检测阈值2
+min = 0
+max = 0
+short = 堵针检测值2
+position = 0
+
+[REAGENT_NEEDLE_DETECT3]
+id = 65
+name = 堵针检测阈值3
+min = 0
+max = 0
+short = 堵针检测值3
+position = 0
+
+[REAGENT_NEEDLE_DETECT4]
+id = 66
+name = 堵针检测阈值4
+min = 0
+max = 0
+short = 堵针检测值4
+position = 0
+
+[REAGENT_NEEDLE_DETECT5]
+id = 67
+name = 堵针检测阈值5
+min = 0
+max = 0
+short = 堵针检测值5
+position = 0
+
+[REAGENT_LIQUID_LEVEL_STEP]
+id = 68
+name = 检测到液面后Z轴下降步数
+min = 0
+max = 1000
+short = water Z pluse
+position = 0
+
+[REAGENT_AIMS_TEMP]
+id = 69
+name = 试剂预热理论目标温度
+min = 0
+max = 0
+short = 目标温度
+position = 0
+
+[REAGENT_TEMP_ADD]
+id = 70
+name = 是否开启环境温度动态补偿
+min = 0
+max = 0
+short = 温度补偿
+position = 0
+
+[REAGENT_TEMP_DELTA]
+id = 71
+name = 传感器温度与试剂温度偏差
+min = 0
+max = 0
+short = 偏差温度1
+position = 0
+
+[REAGENT_TEMP_DELTA15]
+id = 72
+name = 传感器与试剂温度偏差-室温15度
+min = 0
+max = 0
+short = 偏差温度2
+position = 0
+
+[REAGENT_TEMP_DELTA30]
+id = 73
+name = 传感器与试剂温度偏差-室温30度
+min = 0
+max = 0
+short = 偏差温度3
+position = 0
+
+[REAGENT_KP]
+id = 74
+name = PID的比例系数 
+min = 0
+max = 0
+short = Kp
+position = 0
+
+[REAGENT_KI]
+id = 75
+name = PID的积分时间
+min = 0
+max = 0
+short = Ki
+position = 0
+
+[REAGENT_KD]
+id = 76
+name = PID的微分时间
+min = 0
+max = 0
+short = Kd
+position = 0
+
+[REAGENT_CLEAN_ADD]
+id = 77
+name = 是否开启清洗预热补偿
+min = 0
+max = 0
+short = 清洗预热补偿
+position = 0
+
+[REAGENT_SUB_ADD]
+id = 78
+name = 是否开启吸试剂预热补偿
+min = 0
+max = 0
+short = 试剂预热补偿
+position = 0
+
+[REAGENT_R0]
+id = 79
+name = 传感器R0
+min = 0
+max = 0
+short = 传感器R0
+position = 0
+
+[REAGENT_R37]
+id = 80
+name = 传感器R37
+min = 0
+max = 0
+short = 传感器R37
+position = 0
+
+[REAGENT_R100]
+id = 81
+name = 传感器R100
+min = 0
+max = 0
+short = 传感器R100
+position = 0
+
+[REAGENT_SAVE1]
+id = 82
+name = 传感器调整参数1-保留
+min = 0
+max = 0
+short = 保留1
+position = 0
+
+[REAGENT_SAVE2]
+id = 83
+name = 传感器调整参数2-保留
+min = 0
+max = 0
+short = 保留2
+position = 0
+
+[REAGENT_SHORT_CIRCUIT_TEMP]
+id = 84
+name = 传感器短路温度
+min = 0
+max = 0
+short = 短路温度
+position = 0
+
+[REAGENT_BREAK_TEMP]
+id = 85
+name = 传感器断路温度
+min = 0
+max = 0
+short = 断路温度
+position = 0
+
+[REAGENT_SUB_SUM_LIQUID]
+id = 86
+name = 总吸液量
+min = 0
+max = 32000
+short = 总吸液量
+position = 0
+

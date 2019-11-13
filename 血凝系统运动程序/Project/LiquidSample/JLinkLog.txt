@@ -1,0 +1,28 @@
+
+T0F5C 000:359 SEGGER J-Link V5.02f Log File (0009ms, 0297ms total)
+T0F5C 000:359 DLL Compiled: Oct  2 2015 20:51:34 (0009ms, 0297ms total)
+T0F5C 000:359 Logging started @ 2018-06-05 15:11 (0009ms, 0297ms total)
+T0F5C 000:368 JLINK_SetWarnOutHandler(...) (0000ms, 0297ms total)
+T0F5C 000:368 JLINK_OpenEx(...)
+Firmware: J-Link V9 compiled Jul 19 2017 16:11:45
+Hardware: V9.40
+S/N: 59405612
+Feature(s): RDI, GDB, FlashDL, FlashBP, JFlash  returns O.K. (0281ms, 0578ms total)
+T0F5C 000:649 JLINK_SetErrorOutHandler(...) (0000ms, 0578ms total)
+T0F5C 000:649 JLINK_ExecCommand("ProjectFile = "F:\trunk2\Project\Liquid\JLinkSettings.ini"", ...)  returns 0x00 (0011ms, 0589ms total)
+T0F5C 000:664 JLINK_ExecCommand("Device = STM32F103CB", ...)Device "STM32F103CB" selected.  returns 0x00 (0006ms, 0595ms total)
+T0F5C 000:670 JLINK_ExecCommand("DisableConnectionTimeout", ...)  returns 0x01 (0000ms, 0595ms total)
+T0F5C 000:670 JLINK_GetHardwareVersion()  returns 0x16F30 (0000ms, 0595ms total)
+T0F5C 000:670 JLINK_GetDLLVersion()  returns 50206 (0000ms, 0595ms total)
+T0F5C 000:670 JLINK_GetFirmwareString(...) (0000ms, 0595ms total)
+T0F5C 000:681 JLINK_GetDLLVersion()  returns 50206 (0000ms, 0595ms total)
+T0F5C 000:681 JLINK_GetCompileDateTime() (0000ms, 0595ms total)
+T0F5C 000:686 JLINK_GetFirmwareString(...) (0000ms, 0595ms total)
+T0F5C 000:691 JLINK_GetHardwareVersion()  returns 0x16F30 (0000ms, 0595ms total)
+T0F5C 000:706 JLINK_TIF_Select(JLINKARM_TIF_JTAG)  returns 0x00 (0006ms, 0602ms total)
+T0F5C 000:712 JLINK_SetSpeed(500) (0001ms, 0603ms total)
+T0F5C 000:713 JLINK_GetIdData(...) >0x2F8 JTAG>TotalIRLen = ?, IRPrint = 0x..000000000000000000000000 >0x30 JTAG>STM32 (connect): Can not attach to CPU. Trying connect under reset. >0x2F8 JTAG>TotalIRLen = ?, IRPrint = 0x..000000000000000000000000 >0x30 JTAG>
+  ***** Error: STM32: Connecting to CPU via connect under reset failed. (0123ms, 0726ms total)
+T0F5C 003:670 JLINK_Close() (0002ms, 0728ms total)
+T0F5C 003:670  (0002ms, 0728ms total)
+T0F5C 003:670 Closed (0002ms, 0728ms total)

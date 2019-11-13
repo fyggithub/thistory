@@ -1,0 +1,109 @@
+/********************************************************************
+ * Shenzhen Thistory Bio. Tech. Co.
+ * Copyright 2018 - 2018
+ *
+ * StateMonitor.c
+ *******************************************************************/
+
+#include "Board.h"
+#include "Console.h"
+#include "StateMonitor.h"
+#include "Host.h"
+#define HOST_DATA_LENGTH 10
+/********************************************************************
+ *
+ *******************************************************************/
+STATIC UINT8 tag=0;
+
+/********************************************************************
+ *
+ *******************************************************************/
+VOID AnswerState(VOID)
+{
+	UINT8 hostData[HOST_DATA_LENGTH];
+	hostData[0] =0x00;
+	STATIC INT32 i=0;
+	i++;
+	hostData[1] = 0xFF;//FF
+	hostData[2] = 0xFF;//FF
+	if(i>5&&i<=10){
+		hostData[1] = 0x01;//FF
+		hostData[2] = 0x01;//FF			
+	}
+	else if(i>10)
+	{
+		hostData[1] = 0xFF;//FF
+		hostData[2] = 0xFF;//FF		
+		i=0;
+	}
+	
+	hostData[1] = 0xFF;//FF
+	hostData[2] = 0xFF;//FF
+	hostData[3] = 0xFF;
+	hostData[4] = 0xFC;
+	hostData[5] = 0xFE;
+	HostResponse(hostData,6);
+}
+/********************************************************************
+ *
+ *******************************************************************/
+VOID EmergencyStop(VOID)
+{
+
+}
+VOID LedControl(VOID)
+{
+	UINT8 hostData[HOST_DATA_LENGTH];
+	hostData[0] =0x00;
+	hostData[1] = 0x00;
+	HostResponse(hostData,2);
+}
+/********************************************************************
+ *
+ *******************************************************************/
+
+STATIC VOID StateMonitorMessageHandler(Message* msg)
+{
+	DebugLog(tag, "msg(%d : %d, %d, %d, %d)",
+		msg->id, msg->p1, msg->p2, msg->p3, msg->p4);
+	switch(msg->id){
+	case MSG_INIT:
+		break;
+	case MSG_HOST_VERSION:
+		break;
+	case MSG_HOST_GETINFO:
+		break;
+	case MSG_HOST_SETINFO:
+		break;
+	case MSG_HOST_PARINFO:
+		break;
+	case MSG_HOST_STATE_ASK:	
+		AnswerState();
+		break;
+	case MSG_HOST_STATE_LED_CONTROL:
+		LedControl();
+		break;
+	case MSG_HOST_EMERGENCY_STOP:
+		EmergencyStop();
+		break;
+	default:
+		break;
+	}
+}
+
+/********************************************************************
+ *
+ *******************************************************************/
+
+VOID StateMonitorInit(VOID)
+{
+	MessageRegisterHandler (StateMonitorMessageHandler);
+	tag = DebugRegister ("Mon");
+	DebugLog(tag, "Monitor App Init.");
+}
+/********************************************************************
+ * End of File
+ *******************************************************************/
+
+
+

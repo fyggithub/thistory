@@ -1,0 +1,512 @@
+[SAMPLE_POSLMT_VNEG]
+id = 16
+name = 垂直负向极限位置
+min = -32000
+max = 0
+short = Z负极限
+position = 0
+
+[SAMPLE_POSLMT_VPOS]
+id = 17
+name = 垂直正向极限位置
+min = 0
+max = 32000
+short = Z正极限
+position = 0
+
+[SAMPLE_POS_VRST]
+id = 18
+name = 垂直初始位置
+min = -3200
+max = 3200
+short = Z初始位置
+position = 0
+
+[SAMPLE_CLEAN_UP_POS]
+id = 19
+name = 清洗池上方垂直位置
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_CLEAN_CLN_POS]
+id = 20
+name = 清洗池清洗垂直位置
+min = -32000
+max = 32000
+short = 清洗垂直
+position = 0
+
+[SAMPLE_CLEAN_LIMIT_POS]
+id = 21
+name = 清洗池垂直极限位置
+min = -32000
+max = 32000
+short = 清洗极限
+position = 0
+
+[SAMPLE_ROOM_UP_POS]
+id = 22
+name = 常温试剂区域上方垂直位置
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_ROOM_VERTICAL_POS]
+id = 23
+name = 常温试剂区域垂直极限位置
+min = -32000
+max = 32000
+short = 常温极限
+position = 0
+
+[SAMPLE_COOL_UP_POS]
+id = 24
+name = 冷藏试剂区域上方垂直位置
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_COOL_VERTICAL_LIMIT]
+id = 25
+name = 冷藏试剂区域垂直极限位置
+min = -32000
+max = 32000
+short = 冷藏极限
+position = 0
+
+[SAMPLE_DISK_UP_POS]
+id = 26
+name = 调度盘2#位上方垂直位置
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_DISK_LOAD_POS]
+id = 27
+name = 调度盘2#位加样垂直位置
+min = -32000
+max = 32000
+short = 调度垂直
+position = 0
+
+[SAMPLE_DISK_VERTICAL_LIMIT]
+id = 28
+name = 调度盘2#位垂直极限位置
+min = -32000
+max = 32000
+short = 调度极限
+position = 0
+
+[SAMPLE_COOPERATE_UP_POS]
+id = 29
+name = 配合抓杯手上方垂直位置
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_COOPERATE_VERTICAL_POS]
+id = 30
+name = 配合抓杯手垂直位置
+min = -32000
+max = 32000
+short = 配合抓手垂直
+position = 0
+
+[SAMPLE_COOPERATE_VERTICAL_LIMIT]
+id = 31
+name = 配合抓杯手垂直极限位置
+min = -32000
+max = 32000
+short = 配合抓手极限
+position = 0
+
+[SAMPLE_SAMPLEAREA_UP_POS]
+id = 32
+name = 样本管区域上方垂直位置
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_SAMPLEAREA_VERTICAL_POS]
+id = 33
+name = 样本管区域垂直极限位置
+min = -32000
+max = 32000
+short = 样本管垂直
+position = 0
+
+[SAMPLE_X_NEG_LIMIT]
+id = 34
+name = X轴负向极限位置
+min = -32000
+max = 0
+short = X负极限
+position = 0
+
+[SAMPLE_X_POS_LIMIT]
+id = 35
+name = X轴正向极限位置
+min = 0
+max = 32000
+short = X正极限
+position = 0
+
+[SAMPLE_X_INIT_POS]
+id = 36
+name = X轴初始位置
+min = -3200
+max = 3200
+short = X初始位置
+position = 0
+
+[SAMPLE_Y_NEG_LIMIT]
+id = 37
+name = Y轴负向极限位置
+min = -32000
+max = 0
+short = Y负极限
+position = 0
+
+[SAMPLE_Y_POS_LIMIT]
+id = 38
+name = Y轴正向极限位置
+min = 0
+max = 32000
+short = Y正极限
+position = 0
+
+[SAMPLE_Y_INIT_POS]
+id = 39
+name = Y轴初始位置
+min = -3200
+max = 3200
+short = Y初始位置
+position = 0
+
+[SAMPLE_CLEAN_X_POS]
+id = 40
+name = 清洗池位置-X轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_ROOM_X_POS1]
+id = 41
+name = 常温试剂调试位1-X轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_ROOM_X_POS2]
+id = 42
+name = 常温试剂调试位2-X轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_COOL_X_POS1]
+id = 43
+name = 冷藏试剂调试位1-X轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_COOL_X_POS2]
+id = 44
+name = 冷藏试剂调试位2-X轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_DISK_X_POS]
+id = 45
+name = 调度盘2#-X轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_COOPERATE_X_POS]
+id = 46
+name = 配合抓杯手-X轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_SAMPLEAREA_X_POS1]
+id = 47
+name = 样本管区域调试位置1-X轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_SAMPLEAREA_X_POS2]
+id = 48
+name = 样本管区域调试位置2-X轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_SAMPLEAREA_X_POS3]
+id = 49
+name = 样本管区域调试位置3-X轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_CLEAN_Y_POS]
+id = 50
+name = 清洗池位置-Y轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_ROOM_Y_POS1]
+id = 51
+name = 常温试剂调试位1-Y轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_ROOM_Y_POS2]
+id = 52
+name = 常温试剂调试位2-Y轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_COOL_Y_POS1]
+id = 53
+name = 冷藏试剂调试位1-Y轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_COOL_Y_POS2]
+id = 54
+name = 冷藏试剂调试位2-Y轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_DISK_Y_POS]
+id = 55
+name = 调度盘2#-Y轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_COOPERATE_Y_POS]
+id = 56
+name = 配合抓杯手-Y轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_SAMPLEAREA_Y_POS1]
+id = 57
+name = 样本管区域调试位置1-Y轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_SAMPLEAREA_Y_POS2]
+id = 58
+name = 样本管区域调试位置2-Y轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_SAMPLEAREA_Y_POS3]
+id = 59
+name = 样本管区域调试位置3-Y轴
+min = -32000
+max = 32000
+short = 
+position = 1
+
+[SAMPLE_INNER_TIME]
+id = 60
+name = 内壁清洗时间
+min = 0
+max = 100
+short = 内壁清洗时间
+position = 0
+
+[SAMPLE_OUTTER_TIME]
+id = 61
+name = 外壁清洗时间
+min = 0
+max = 100
+short = 外壁清洗时间
+position = 0
+
+[SAMPLE_SUB_TIME]
+id = 62
+name = 吸液时间
+min = 0
+max = 100
+short = 吸液时间
+position = 0
+
+[SAMPLE_DRAIN_TIME]
+id = 63
+name = 排液时间
+min = 0
+max = 100
+short = 排液时间
+position = 0
+
+[SAMPLE_SUB_FRONT_AIR]
+id = 64
+name = 吸液前吸空气量
+min = 0
+max = 3200
+short = 吸液前吸空气量
+position = 0
+
+[SAMPLE_ADD_SUB]
+id = 65
+name = 多吸液量
+min = 0
+max = 3200
+short = 多吸液量
+position = 0
+
+[SAMPLE_SUB_PUSH]
+id = 66
+name = 吸液后回推量
+min = 0
+max = 3200
+short = 吸液后回推量
+position = 0
+
+[SAMPLE_SUB_LATER_AIR]
+id = 67
+name = 吸液后吸空气量
+min = 0
+max = 3200
+short = Sub Air
+position = 0
+
+[SAMPLE_DRAIN_LATER_AIR]
+id = 68
+name = 排液后吸空气量
+min = 0
+max = 3200
+short = Drain Air
+position = 0
+
+[SAMPLE_CLEAN_LATER_AIR]
+id = 69
+name = 清洗后吸空气量
+min = 0
+max = 3200
+short = Cln Air
+position = 0
+
+[SAMPLE_SYRINGE_NEGLMT]
+id = 70
+name = 注射器负向极限位置
+min = -32000
+max = 32000
+short = SYN负极限
+position = 0
+
+[SAMPLE_SYRINGE_INIT_POS]
+id = 71
+name = 注射器初始位置
+min = -32000
+max = 32000
+short = SYN初始
+position = 0
+
+[SAMPLE_SYRINGE_POSLMT]
+id = 72
+name = 注射器正向极限位置
+min = -32000
+max = 32000
+short = SYN正极限
+position = 0
+
+[SAMPLE_STEP_UL]
+id = 73
+name = 1微升对应微步数
+min = 0
+max = 516
+short = ul对应pluses
+position = 0
+
+[SAMPLE_NEEDLE_DETECT1]
+id = 74
+name = 堵针检测阈值1
+min = 0
+max = 0
+short = 堵针检测值1
+position = 0
+
+[SAMPLE_NEEDLE_DETECT2]
+id = 75
+name = 堵针检测阈值2
+min = 0
+max = 0
+short = 堵针检测值2
+position = 0
+
+[SAMPLE_NEEDLE_DETECT3]
+id = 76
+name = 堵针检测阈值3
+min = 0
+max = 0
+short = 堵针检测值3
+position = 0
+
+[SAMPLE_NEEDLE_DETECT4]
+id = 77
+name = 堵针检测阈值4
+min = 0
+max = 0
+short = 堵针检测值4
+position = 0
+
+[SAMPLE_NEEDLE_DETECT5]
+id = 78
+name = 堵针检测阈值5
+min = 0
+max = 0
+short = 堵针检测值5
+position = 0
+
+[SAMPLE_LIQUID_LEVEL_STEP]
+id = 79
+name = 检测到液面后Z轴下降步数
+min = -3200
+max = 3200
+short = water Z pluse
+position = 0
+

@@ -1,0 +1,46 @@
+/********************************************************************
+ * Shenzhen Thistory Bio. Tech. Co.
+ * Copyright 2018 - 2018
+ *
+ * HostLoad.h
+ *******************************************************************/
+#ifndef _HOST_LOAD_H_
+#define _HOST_LOAD_H_
+/********************************************************************
+ *
+ *******************************************************************/
+#include "Datatypes.h"
+/********************************************************************
+ *
+ *******************************************************************/
+#define HOST_ADDR_LOAD	(0x0B)
+
+#define HOST_CMD_VERSION	(0x70)
+#define HOST_CMD_GETINFO	(0x71)
+#define HOST_CMD_SETINFO	(0x72)
+#define HOST_CMD_PARAINFO	(0x73)
+#define HOST_CMD_PARASET    (0x74)
+#define HOST_CMD_WRKSAVE    (0x75)
+#define HOST_CMD_MOTOR_ENABLE	(0x80)
+#define HOST_CMD_MOTOR_RESET	(0x81)
+#define HOST_CMD_MOTOR_TOZERO	(0x82)
+#define HOST_CMD_MOTOR_MOVREL	(0x83)
+#define HOST_CMD_MOTOR_MOVABS	(0x84)
+#define HOST_CMD_MOTOR_MOVWRK	(0x85)
+#define HOST_CMD_MOTOR_GETPOS	(0x86)
+#define HOST_CMD_LOADCUP	(0x87)
+#define HOST_CMD_DISPATCH	(0x89)
+#define HOST_CMD_IOSET		(0x7A)
+#define HOST_CMD_IOGET		(0x7B)
+#define HOST_CMD_OPTOGET	(0x7C)
+#define HOST_CMD_STOP	(0x0E)
+#define HOST_CMD_FAULT	(0xF0)
+/********************************************************************
+ *
+ *******************************************************************/
+VOID HostLoadInit(VOID);
+/********************************************************************
+ * End of File
+ *******************************************************************/
+#endif // _HOST_LOAD_H_
+

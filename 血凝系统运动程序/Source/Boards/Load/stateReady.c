@@ -1,0 +1,310 @@
+/********************************************************************
+ * Shenzhen Thistory Bio. Tech. Co.
+ * Copyright 2018 - 2018
+ *
+ * stateReady.c
+ *******************************************************************/
+#include "Load.h"
+#include "Timer.h"
+#include "SlideState.h"
+/********************************************************************
+ *
+ *******************************************************************/
+
+#define DISP_SPEED_MAX	(0)
+
+
+//STATIC CONST INT32 worksPosition[4] = {56+320, 800+56+320, 1600+56+320, 2400+56+320};//
+STATIC CONST INT32 holesPosition[4] = {0, 800, 1600, 2400};
+
+#define LOAD_POS_UPPER	(-8288)  //原先是 -9344 有异响
+#define LOAD_POS_LOWER  (0)   //原先是 320 有异响
+#define LOAD_WAIT_UPPER (1000)  // ms
+#define LOAD_WAIT_LOWER (300)   // ms
+
+#define LOAD_AUTO_TIMES_PERIOD	(2)
+#define LOAD_AUTO_TIMES_MAX		(14)
+
+#define CUP_ON_HOLE		(1)
+
+/********************************************************************
+ *  work range [0,3]
+ *******************************************************************/
+INT32 LoadGetWrkPosByHole1(INT32 work)
+{
+	INT32 step;
+	switch(work)
+	{
+		case 0:step = ConfigGet(CFG_LOAD_POS_WRK1);break;
+		case 1:step = ConfigGet(CFG_LOAD_POS_WRK2);break;
+		case 2:step = ConfigGet(CFG_LOAD_POS_WRK3);break;
+		case 3:step = ConfigGet(CFG_LOAD_POS_WRK4);break;
+		default:break;
+	}
+	return step;
+}
+/********************************************************************
+ *
+ *******************************************************************/
+
+/********************************************************************
+ *
+ *******************************************************************/
+STATIC VOID MessageDispatch(INT32 hole, INT32 work)
+{
+	if(hole>=HOLE_MIN && hole<=HOLE_MAX
+		&& work>=WORK_MIN && work<=WORK_MAX){
+		INT32 wrkPosByHole1 = LoadGetWrkPosByHole1 (work-WORK_MIN);
+		INT32 holeOffset = holesPosition[hole-HOLE_MIN];
+		INT32 posAbs = wrkPosByHole1 + holeOffset;
+		StepMotor* motor = &(loadApp.motors[MOTOR_DISP]);
+
+		Gpio* wrk4_opto = BoardGetGpio (WORK4_OPTO);
+		UINT16 v = GpioGet (wrk4_opto);
+		if (v != CUP_ON_HOLE){
+			loadApp.bDispWatchSlide = TRUE;
+			SlideStateWatchStart ();
+		}
+
+		loadApp.whichHoleOnWork = hole;
+		loadApp.whichWorkHoleOn = work;
+		loadApp.state1_Disp = STATE1_RDY_DISP_DISP;
+		LoadStepMotorMovAbs (motor, posAbs, DISP_SPEED_MAX);
+	}
+}
+
+/********************************************************************
+ *
+ *******************************************************************/
+STATIC VOID MessageLoad(VOID)
+{
+	loadApp.state1_Load = STATE1_RDY_LOAD_UP;
+	StepMotor* motor = &(loadApp.motors[MOTOR_LOAD]);
+//	INT32 upper = LOAD_POS_UPPER;
+	INT32 upper = ConfigGet(CFG_LOAD_POS_VTOP);
+	StepMotorMovAbs(motor, upper, LOAD_SPEED_MAX);
+}
+/********************************************************************
+ *
+ *******************************************************************/
+STATIC VOID MessageOnStateReadyLoadUp(Message* msg)
+{
+	switch(msg->id){
+		case MSG_LOAD_DONE:{
+				loadApp.state1_Load = STATE1_RDY_LOAD_UPWAIT;
+				TimerStart(LOAD_WAIT_UPPER, 1);
+				SlideStateWatchStart ();
+			}break;
+		default:break;
+	}
+}
+/********************************************************************
+ *
+ *******************************************************************/
+STATIC VOID MessageOnStateReadyLoadUpWait(Message* msg)
+{
+	StepMotor* motor = &(loadApp.motors[MOTOR_LOAD]);
+	switch(msg->id){
+		case MSG_TIMER:{
+				loadApp.state1_Load = STATE1_RDY_LOAD_DOWN;
+//				INT32 lower = LOAD_POS_LOWER;
+				INT32 lower = ConfigGet(CFG_LOAD_POS_VBOT);
+				StepMotorMovAbs(motor, lower, LOAD_SPEED_MAX);
+				SlideStateWatchStop ();
+				SlideStateUpdateAsLoaded ();
+			}break;
+		default:break;
+	}
+}
+/********************************************************************
+ *
+ *******************************************************************/
+STATIC VOID MessageOnStateReadyLoadDown(Message* msg)
+{
+	switch(msg->id){
+		case MSG_LOAD_DONE:
+			loadApp.state1_Load = STATE1_RDY_LOAD_DOWNWAIT;
+			TimerStart(LOAD_WAIT_LOWER, 1);
+			break;
+	}
+}
+/********************************************************************
+ *
+ *******************************************************************/
+STATIC VOID MessageOnStateReadyLoadDownWait(Message* msg)
+{
+	switch(msg->id){
+		case MSG_TIMER:{
+				loadApp.state1_Load = STATE1_RDY_LOAD_IDLE;
+				if(loadApp.bAutoLoad
+					&& loadApp.autoLoadCnt < LOAD_AUTO_TIMES_MAX){
+					loadApp.autoLoadCnt ++;
+					if(loadApp.autoLoadCnt % LOAD_AUTO_TIMES_PERIOD == 0){
+						if(loadApp.autoLoadCnt < LOAD_AUTO_TIMES_MAX){
+							if(slideState.state < SLIDE_LESS_2_3 )
+								MessageLoad();						
+							else
+								loadApp.bAutoLoad = FALSE;
+						}
+					}
+					else{
+						MessageLoad ();
+					}
+				}
+			}break;
+	}
+}
+
+/********************************************************************
+ *
+ *******************************************************************/
+STATIC VOID MessageOnStateReadyDispDisp(Message* msg)
+{
+	StepMotor* motor = &(loadApp.motors[MOTOR_DISP]);
+	switch(msg->id){
+		case MSG_DISP_DONE:
+					if (loadApp.bDispWatchSlide){
+						loadApp.bDispWatchSlide = FALSE;
+						SlideStateWatchStop ();
+						if (motor->step >= DISP_QUARTER_STEPS){
+							SlideStateUpdateAsDispatched();
+							if(slideState.state <= SLIDE_LESS_1_3){
+								if(loadApp.bAutoLoad == FALSE){
+									loadApp.bAutoLoad = TRUE;
+									loadApp.autoLoadCnt = 0;
+									MessageLoad();
+								}
+							}
+							else{
+								loadApp.bAutoLoad = FALSE;
+							}
+						}
+					}
+#ifdef LOAD_TEST_AUTOLOAD
+					TimerStart2 (1000, 3);
+					break;
+		case MSG_TIMER2:{			
+				Message msg;
+				msg.id = MSG_TEST;
+				MessagePost(&msg);
+			}
+#endif
+			if (loadApp.needResponse){
+				loadApp.needResponse = FALSE;
+				ResponseState();
+			}
+			loadApp.state1_Disp = STATE1_RDY_DISP_IDLE;
+			break;
+		default:break;
+	}
+}
+/********************************************************************
+ *
+ *******************************************************************/
+
+STATIC VOID MessageOnStateReadyLoadIdle(Message* msg)
+{
+	switch(msg->id){
+		case MSG_HOST_MOTOR_ENABLE:
+		case MSG_HOST_MOTOR_TOZERO:
+		case MSG_HOST_MOTOR_MOVREL:
+		case MSG_HOST_MOTOR_MOVABS:
+		case MSG_HOST_MOTOR_MOVWRK:
+		case MSG_HOST_MOTOR_GETPOS:{
+				if (msg->p1 == MSG_MOTOR_LOAD)
+					LoadBasicCommandOnStateAndBackTo (STATE0_READY,msg);
+			}break;
+		case MSG_CMD_MOVREL:
+		case MSG_CMD_MOVABS:{
+				if (msg->p1 == MSG_MOTOR_LOAD)
+					LoadBasicCommandOnStateAndBackTo (STATE0_READY, msg);
+			}break;
+		case MSG_HOST_MOTOR_RESET:{
+				if (msg->p1 == MSG_MOTOR_LOAD)
+					loadApp.needResponse = TRUE;			
+			}// go through
+		case MSG_CMD_RESET:{
+				if (msg->p1 == MSG_MOTOR_LOAD) {
+					SlideStateWatchStart ();
+					MessageReset(msg);
+				}
+			}break;
+		case MSG_CMD_LOAD:
+		case MSG_HOST_LOADCUP:	MessageLoad();	break;
+		default:break;		
+	}
+}
+/********************************************************************
+ *
+ *******************************************************************/
+
+STATIC VOID MessageOnStateReadyDispIdle(Message* msg)
+{
+	switch(msg->id){
+		case MSG_HOST_MOTOR_ENABLE:
+		case MSG_HOST_MOTOR_TOZERO:
+		case MSG_HOST_MOTOR_MOVREL:
+		case MSG_HOST_MOTOR_MOVABS:
+		case MSG_HOST_MOTOR_MOVWRK:
+		case MSG_HOST_MOTOR_GETPOS:{
+					if (msg->p1 == MSG_MOTOR_DISP)
+						LoadBasicCommandOnStateAndBackTo (STATE0_READY,msg);
+				}break;
+		case MSG_CMD_MOVREL:
+		case MSG_CMD_MOVABS:{
+					if (msg->p1 == MSG_MOTOR_DISP)
+						LoadBasicCommandOnStateAndBackTo (STATE0_READY, msg);
+				}break;
+		case MSG_HOST_MOTOR_RESET:{
+					if (msg->p1 == MSG_MOTOR_DISP)
+						loadApp.needResponse = TRUE;
+				}// go through
+		case MSG_CMD_RESET:{
+					if (msg->p1 == MSG_MOTOR_DISP) {
+						SlideStateWatchStart ();
+						MessageReset(msg);
+					}
+				}break;
+		case MSG_HOST_DISPATCH:	loadApp.needResponse = TRUE;			// go through
+		case MSG_CMD_DISP:		MessageDispatch (msg->p1, msg->p2);		break;
+#ifdef LOAD_TEST_AUTOLOAD
+		case MSG_TEST:{
+				UINT8 hole = loadApp.whichHoleOnWork;
+				UINT8 work = loadApp.whichWorkHoleOn;
+				work++;
+				work = work >WORK_MAX ? WORK_MIN : work;
+				MessageDispatch (hole, work);
+			}break;			
+#endif
+		default:break;		
+	}
+}
+/********************************************************************
+ *
+ *******************************************************************/
+#define SWITCH switch
+VOID MessageOnStateReady(Message* msg)
+{
+	SWITCH(loadApp.state1_Load){
+		case STATE1_RDY_LOAD_IDLE:		MessageOnStateReadyLoadIdle(msg);		break;	
+		case STATE1_RDY_LOAD_UP:		MessageOnStateReadyLoadUp(msg);			break;
+		case STATE1_RDY_LOAD_UPWAIT:	MessageOnStateReadyLoadUpWait(msg);		break;
+		case STATE1_RDY_LOAD_DOWN:		MessageOnStateReadyLoadDown(msg);		break;
+		case STATE1_RDY_LOAD_DOWNWAIT:	MessageOnStateReadyLoadDownWait(msg);	break;
+		default:break;			
+	}
+/*******************************/
+	switch(loadApp.state1_Disp){
+		case STATE1_RDY_DISP_IDLE:	MessageOnStateReadyDispIdle (msg);	break;
+		case STATE1_RDY_DISP_DISP:	MessageOnStateReadyDispDisp (msg);	break;
+		default:break;			
+	}
+}
+
+/********************************************************************
+ *
+ *******************************************************************/
+
+
+
+
