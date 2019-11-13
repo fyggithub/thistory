@@ -1,0 +1,18 @@
+--cpu Cortex-M3
+".\objects\system_stm32f1xx.o"
+".\objects\startup_stm32f103xe.o"
+".\objects\stm32f1xx_hal.o"
+".\objects\stm32f1xx_hal_cortex.o"
+".\objects\stm32f1xx_hal_rcc.o"
+".\objects\stm32f1xx_hal_crc.o"
+".\objects\stm32f1xx_hal_flash.o"
+".\objects\stm32f1xx_hal_flash_ex.o"
+".\objects\stm32f1xx_hal_gpio.o"
+".\objects\main.o"
+".\objects\board.o"
+".\objects\interrupt.o"
+".\objects\boot.o"
+--strict --scatter ".\Objects\BootLoad.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\BootLoad.map" -o .\Objects\BootLoad.axf

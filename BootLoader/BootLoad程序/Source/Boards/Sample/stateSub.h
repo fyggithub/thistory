@@ -1,0 +1,44 @@
+#ifndef __stateSub_H__
+#define __stateSub_H__
+
+#include "Board.h"
+#include "Console.h"
+#include "StepMotor.h"
+#include "Datatypes.h"
+#include "Message.h"
+#include "SendResultCode.h"
+#include "Sample.h"
+#include "ConfigSample.h"
+#include "StepMotorSample.h"
+//吸液函数中的主状态
+enum {
+	STATE1_SUB_INIT = 0, STATE1_UNKNOWN_LIQUID, STATE1_KNOWN_LIQUID,
+	STATE1_ABS_DISTANCE, STATE1_FOLLOW_LIQUID,  STATE1_SUB_MAX,
+};
+//Z轴检测液面的主状态
+enum{
+	STATE1_LIQUID_DET_INIT = 0, STATE1_LIQUID_DET_RUN,  STATE1_LIQUID_DET_SUCCESS,\
+	STATE1_LIQUID_DET_FALL,     STATE1_LIQUID_DET_COLL, STATE1_LIQUID_DET_MAX,
+};
+
+enum{
+	STATE2_ABS_DISTANCE_DOWN = 0, 	STATE2_ABS_DISTANCE_SUB, 
+	STATE2_ABS_DISTANCE_UP, 		STATE2_ABS_DISTANCE_MAX,
+};
+enum{
+	STATE2_UNKNOWN_LIQUID_INIT = 0,		STATE2_UNKNOWN_LIQUID_SUCCESS,
+	STATE2_UNKNOWN_LIQUID_FAIL, 		STATE2_UNKNOWN_LIQUID_COLL, 
+	STATE2_UNKNOWN_LIQUID_MAX
+};
+//吸液函数中的次-次状态
+enum{
+	STATE3_UNKNOWN_LIQUID_SUCCESS_INIT = 0,	STATE3_UNKNOWN_LIQUID_SUCCESS_SUB,
+	STATE3_UNKNOWN_LIQUID_SUCCESS_AIR,		STATE3_UNKNOWN_LIQUID_SUCCESS_DOWN,
+	STATE3_UNKNOWN_LIQUID_SUCCESS_MAX
+};
+
+VOID SampleStateSubMessageHandler(Message* msg);
+
+#endif
+
+

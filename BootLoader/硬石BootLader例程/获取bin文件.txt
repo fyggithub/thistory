@@ -1,0 +1,5 @@
+将编译的 .axf 文件转换成 .bin 文件：
+命令形式：“fromelf.exe”所在路径             --bin -o  “.bin”文件存放路径 “.axf”文件所在路径        
+
+示例：
+C:\Keil_v5\ARM\ARMCC\bin\fromelf.exe --bin -o YS-F1PRO.bin  YS-F1PRO\YS-F1PRO.axf
